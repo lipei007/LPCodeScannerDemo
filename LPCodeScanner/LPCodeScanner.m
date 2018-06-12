@@ -162,6 +162,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    [self setTorchMode:AVCaptureTorchModeOff];
     if ([self.session isRunning]) {
         [self.session stopRunning];
     }
@@ -240,6 +241,31 @@
     self.scannerInitial = YES;
 }
 
+#pragma mark - Setter
+
+- (void)setTorchMode:(AVCaptureTorchMode)mode {
+    
+    if (self.session && self.device) {
+        
+        NSError *error;
+        [self.device lockForConfiguration:&error];
+        if (error) {
+            return;
+        }
+        
+        [self.session beginConfiguration];
+        
+        if ([self.device isTorchModeSupported:mode]) {
+            [self.device setTorchMode:mode];
+        }
+        
+        [self.session commitConfiguration];
+        
+        [self.device unlockForConfiguration];
+        
+    }
+}
+
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
@@ -256,5 +282,19 @@
     }
     
 }
+
+#pragma mark - Button Action
+
+- (IBAction)flashBtnClick:(UIButton *)sender {
+    
+    sender.selected = !sender.isSelected;
+    
+    if (sender.isSelected) {
+        [self setTorchMode:AVCaptureTorchModeOn];
+    } else {
+        [self setTorchMode:AVCaptureTorchModeOff];
+    }
+}
+
 
 @end

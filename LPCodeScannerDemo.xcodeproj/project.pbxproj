@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423B834B20CF582500723521 /* LPScannerResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423B834A20CF582500723521 /* LPScannerResource.xcassets */; };
 		4258D13020CE25F800067071 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4258D12F20CE25F800067071 /* AppDelegate.m */; };
 		4258D13320CE25F800067071 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4258D13220CE25F800067071 /* ViewController.m */; };
 		4258D13620CE25F800067071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4258D13420CE25F800067071 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		423B834A20CF582500723521 /* LPScannerResource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LPScannerResource.xcassets; sourceTree = "<group>"; };
 		4258D12B20CE25F800067071 /* LPCodeScannerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPCodeScannerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4258D12E20CE25F800067071 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4258D12F20CE25F800067071 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4258D16520CE474600067071 /* CodeScanner.storyboard */,
 				4258D16620CE474600067071 /* LPCodeScanner.h */,
 				4258D16720CE474600067071 /* LPCodeScanner.m */,
+				423B834A20CF582500723521 /* LPScannerResource.xcassets */,
 			);
 			path = LPCodeScanner;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4258D13B20CE25FA00067071 /* LaunchScreen.storyboard in Resources */,
+				423B834B20CF582500723521 /* LPScannerResource.xcassets in Resources */,
 				4258D13820CE25FA00067071 /* Assets.xcassets in Resources */,
 				4258D16820CE474600067071 /* CodeScanner.storyboard in Resources */,
 				4258D13620CE25F800067071 /* Main.storyboard in Resources */,
@@ -452,7 +456,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J9NAMWSX2;
 				INFOPLIST_FILE = LPCodeScannerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,7 +474,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J9NAMWSX2;
 				INFOPLIST_FILE = LPCodeScannerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
