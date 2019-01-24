@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,19 +15,19 @@
             <objects>
                 <viewController storyboardIdentifier="LPCodeScanner" useStoryboardIdentifierAsRestorationIdentifier="YES" id="41J-NQ-wiU" customClass="LPCodeScanner" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aiT-qZ-M5f">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8z-rA-Qpf">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DJ-GK-9l9">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCI-Zm-N7X">
-                                <rect key="frame" x="234" y="252" width="300" height="300"/>
+                                <rect key="frame" x="70" y="161" width="274" height="274"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vCI-Zm-N7X" secondAttribute="height" multiplier="1:1" id="8cj-iq-wvr"/>
@@ -46,37 +45,44 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X65-ZX-fzf">
-                                <rect key="frame" x="368" y="520" width="32" height="32"/>
+                                <rect key="frame" x="191" y="403" width="32" height="32"/>
                                 <state key="normal" image="flashlight_off"/>
                                 <state key="selected" image="flashlight_on"/>
                                 <connections>
                                     <action selector="flashBtnClick:" destination="41J-NQ-wiU" eventType="touchUpInside" id="GGc-A0-IoF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykg-2S-pd2">
+                                <rect key="frame" x="20" y="40" width="30" height="30"/>
+                                <state key="normal" image="btn_return"/>
+                                <connections>
+                                    <action selector="backBtnClick:" destination="41J-NQ-wiU" eventType="touchUpInside" id="xja-Vv-3ev"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TEW-wV-M4S" firstAttribute="trailing" secondItem="X65-ZX-fzf" secondAttribute="trailing" constant="120" id="0Vg-Oi-g8M"/>
                             <constraint firstItem="X65-ZX-fzf" firstAttribute="centerX" secondItem="vCI-Zm-N7X" secondAttribute="centerX" id="4LS-Iu-oXp"/>
                             <constraint firstItem="4DJ-GK-9l9" firstAttribute="height" secondItem="D8z-rA-Qpf" secondAttribute="height" id="4QJ-Tu-9cj"/>
                             <constraint firstAttribute="bottom" secondItem="vCI-Zm-N7X" secondAttribute="bottom" constant="81" id="7a1-vL-ZwM"/>
                             <constraint firstItem="X65-ZX-fzf" firstAttribute="bottom" secondItem="vCI-Zm-N7X" secondAttribute="bottom" id="8cN-iK-llx"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="centerX" secondItem="aiT-qZ-M5f" secondAttribute="centerX" id="8dy-2H-2iw"/>
                             <constraint firstItem="D8z-rA-Qpf" firstAttribute="width" secondItem="aiT-qZ-M5f" secondAttribute="width" id="BuV-2a-gda"/>
-                            <constraint firstItem="X65-ZX-fzf" firstAttribute="centerY" secondItem="vCI-Zm-N7X" secondAttribute="centerY" id="EUV-gk-MQj"/>
                             <constraint firstItem="X65-ZX-fzf" firstAttribute="centerX" secondItem="vCI-Zm-N7X" secondAttribute="centerX" id="HuO-tH-rYH"/>
                             <constraint firstItem="4DJ-GK-9l9" firstAttribute="leading" secondItem="D8z-rA-Qpf" secondAttribute="leading" id="OtU-1g-dHc"/>
                             <constraint firstItem="D8z-rA-Qpf" firstAttribute="leading" secondItem="aiT-qZ-M5f" secondAttribute="leading" id="RYY-iZ-sc1"/>
                             <constraint firstItem="4DJ-GK-9l9" firstAttribute="width" secondItem="D8z-rA-Qpf" secondAttribute="width" id="S8U-sb-mvg"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="centerX" secondItem="aiT-qZ-M5f" secondAttribute="centerX" constant="-100" id="V3j-Mb-G9g"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="centerX" secondItem="aiT-qZ-M5f" secondAttribute="centerX" constant="-80" id="Z6F-qY-EEv"/>
-                            <constraint firstItem="TEW-wV-M4S" firstAttribute="bottom" secondItem="X65-ZX-fzf" secondAttribute="bottom" constant="150" id="a7Y-s3-k6O"/>
                             <constraint firstAttribute="trailing" secondItem="vCI-Zm-N7X" secondAttribute="trailing" constant="70" id="cSr-ne-Xxd"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="centerY" secondItem="aiT-qZ-M5f" secondAttribute="centerY" constant="-110" id="e2p-ZK-jAC"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="centerY" secondItem="aiT-qZ-M5f" secondAttribute="centerY" constant="-70" id="fNO-9Q-eMD"/>
+                            <constraint firstItem="Ykg-2S-pd2" firstAttribute="leading" secondItem="TEW-wV-M4S" secondAttribute="leading" constant="20" id="fhm-wA-LK3"/>
+                            <constraint firstItem="Ykg-2S-pd2" firstAttribute="top" secondItem="TEW-wV-M4S" secondAttribute="top" constant="20" id="gCD-RZ-WLJ"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="top" secondItem="aiT-qZ-M5f" secondAttribute="top" constant="60" id="gDV-MG-Lxf"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="top" secondItem="aiT-qZ-M5f" secondAttribute="top" constant="60" id="mwH-jr-Ixq"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="leading" secondItem="aiT-qZ-M5f" secondAttribute="leading" constant="70" id="ncF-ii-QJ5"/>
+                            <constraint firstItem="X65-ZX-fzf" firstAttribute="centerX" secondItem="vCI-Zm-N7X" secondAttribute="centerX" id="ndQ-Mm-MJt"/>
                             <constraint firstItem="X65-ZX-fzf" firstAttribute="centerY" secondItem="vCI-Zm-N7X" secondAttribute="centerY" id="qiu-Iw-m6T"/>
                             <constraint firstItem="D8z-rA-Qpf" firstAttribute="top" secondItem="aiT-qZ-M5f" secondAttribute="top" id="rVq-z9-u0f"/>
                             <constraint firstItem="vCI-Zm-N7X" firstAttribute="centerX" secondItem="aiT-qZ-M5f" secondAttribute="centerX" id="s29-TR-Yol"/>
@@ -88,8 +94,6 @@
                         <viewLayoutGuide key="safeArea" id="TEW-wV-M4S"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="0Vg-Oi-g8M"/>
-                                <exclude reference="a7Y-s3-k6O"/>
                                 <exclude reference="x5P-uf-WHr"/>
                                 <exclude reference="7a1-vL-ZwM"/>
                                 <exclude reference="8dy-2H-2iw"/>
@@ -104,8 +108,6 @@
                                 <exclude reference="s29-TR-Yol"/>
                                 <exclude reference="uOO-Nq-OMU"/>
                                 <exclude reference="4LS-Iu-oXp"/>
-                                <exclude reference="8cN-iK-llx"/>
-                                <exclude reference="EUV-gk-MQj"/>
                                 <exclude reference="HuO-tH-rYH"/>
                                 <exclude reference="qiu-Iw-m6T"/>
                             </mask>
@@ -121,16 +123,13 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="0Vg-Oi-g8M"/>
                                 <include reference="V3j-Mb-G9g"/>
                                 <include reference="mwH-jr-Ixq"/>
                                 <include reference="uOO-Nq-OMU"/>
-                                <include reference="EUV-gk-MQj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="a7Y-s3-k6O"/>
                                 <include reference="8dy-2H-2iw"/>
                                 <include reference="cSr-ne-Xxd"/>
                                 <include reference="fNO-9Q-eMD"/>
@@ -142,7 +141,6 @@
                             <mask key="constraints">
                                 <include reference="e2p-ZK-jAC"/>
                                 <include reference="s29-TR-Yol"/>
-                                <include reference="8cN-iK-llx"/>
                                 <include reference="HuO-tH-rYH"/>
                             </mask>
                         </variation>
@@ -159,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_return" width="30" height="30"/>
         <image name="flashlight_off" width="32" height="32"/>
         <image name="flashlight_on" width="32" height="32"/>
     </resources>

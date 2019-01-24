@@ -29,10 +29,16 @@
 
 - (IBAction)scannerClick:(id)sender {
     
-    LPCodeScanner *scanner = LPCodeScanner.codeScanner;
-    scanner.completion = ^(NSString *value) {
-        self.codeLB.text = value;
-    };
+    __weak typeof(self) weakSelf = self;
+    LPCodeScanner *scanner = [LPCodeScanner codeScannerWithCompletionHandler:^(LPCodeScanner *scanner, BOOL cancel, NSString *value) {
+        if (cancel) {
+            
+        } else {
+            weakSelf.codeLB.text = value;
+        }
+        
+        [scanner.navigationController popViewControllerAnimated:YES];
+    }];
     [self.navigationController pushViewController:scanner animated:YES];
     
 }

@@ -27,6 +27,9 @@
 @property (nonatomic,strong) CAShapeLayer *maskLayer;
 @property (nonatomic,strong) CAShapeLayer *rectLayer;
 
+@property (nonatomic,assign) BOOL navigationBarHidden;
+@property (nonatomic,copy) void (^completionHandler)(LPCodeScanner *scanner, BOOL, NSString *value);
+
 @end
 
 @implementation LPCodeScanner
@@ -35,8 +38,9 @@
     return NSStringFromClass([self class]);
 }
 
-+ (instancetype)codeScanner {
++ (instancetype)codeScannerWithCompletionHandler:(void (^)(LPCodeScanner *scanner, BOOL cancel, NSString *value))completion {
     LPCodeScanner *scannerVC = [[UIStoryboard storyboardWithName:@"CodeScanner" bundle:nil] instantiateViewControllerWithIdentifier:[self storyboardID]];
+    scannerVC.completionHandler = completion;
     return scannerVC;
 }
 
@@ -46,6 +50,11 @@
     
     self.scanerView.layer.borderColor = [UIColor blackColor].CGColor;
     self.scanerView.layer.borderWidth = 0.5f;
+    
+    if (self.navigationController) {
+        self.navigationBarHidden = self.navigationController.navigationBarHidden;
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
     
     [self initCapture];
 }
@@ -275,10 +284,12 @@
         
         AVMetadataMachineReadableCodeObject *metadataObject = [metadataObjects objectAtIndex:0];
         NSString *codeValue = metadataObject.stringValue;
-        if (self.completion) {
-            self.completion(codeValue);
+        if (self.completionHandler) {
+            self.completionHandler(self, NO, codeValue);
+            if (self.navigationController) {
+                [self.navigationController setNavigationBarHidden:self.navigationBarHidden animated:NO];
+            }
         }
-        [self.navigationController popViewControllerAnimated:YES];
     }
     
 }
@@ -296,5 +307,14 @@
     }
 }
 
+
+- (IBAction)backBtnClick:(UIButton *)sender {
+    if (self.completionHandler) {
+        self.completionHandler(self, YES, nil);
+        if (self.navigationController) {
+            [self.navigationController setNavigationBarHidden:self.navigationBarHidden animated:NO];
+        }
+    }
+}
 
 @end

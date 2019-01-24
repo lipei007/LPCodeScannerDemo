@@ -10,9 +10,6 @@
 
 @interface LPCodeScanner : UIViewController
 
-@property (nonatomic,copy) void (^completion)(NSString *value);
-
-
-+ (instancetype)codeScanner;
++ (instancetype)codeScannerWithCompletionHandler:(void(^)(LPCodeScanner *scanner, BOOL cancel, NSString *value))completion;
 
 @end
